@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SplashViewController" customModule="TaskAppClase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jT-2P-Zew" customClass="LottieView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="248" width="414" height="400"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="Wdy-PJ-1Nx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8jT-2P-Zew" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5jE-7m-s1r"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8jT-2P-Zew" secondAttribute="trailing" id="b2v-6e-p5T"/>
+                            <constraint firstItem="8jT-2P-Zew" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hI0-8C-0tW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="animationView" destination="8jT-2P-Zew" id="zml-a7-xs3"/>
+                        <segue destination="TJt-Vy-avZ" kind="show" identifier="SEGUE_FROM_SPLASH_TO_MAIN" id="JT9-c5-dJF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="nmq-RW-qnc">
+            <objects>
+                <viewController modalPresentationStyle="currentContext" id="TJt-Vy-avZ" customClass="MainViewController" customModule="TaskAppClase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vXg-Rf-jp1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="swO-ip-uW7">
+                                <rect key="frame" x="0.0" y="96" width="414" height="766"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="u79-8V-ZV1">
+                                <rect key="frame" x="20" y="52" width="374" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="Qjx-qz-efN"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="ALL"/>
+                                    <segment title="TODO"/>
+                                    <segment title="DONE"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5HB-kH-UCF">
+                                <rect key="frame" x="335" y="816" width="63" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="63" id="W20-64-bjn"/>
+                                    <constraint firstAttribute="height" constant="30" id="ZOU-Ai-uVp"/>
+                                </constraints>
+                                <state key="normal" title="Add Task"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="u79-8V-ZV1" firstAttribute="leading" secondItem="YMA-lg-zQI" secondAttribute="leading" constant="20" id="2pY-p6-He4"/>
+                            <constraint firstItem="swO-ip-uW7" firstAttribute="bottom" secondItem="YMA-lg-zQI" secondAttribute="bottom" id="Df5-Fa-2MP"/>
+                            <constraint firstItem="YMA-lg-zQI" firstAttribute="trailing" secondItem="5HB-kH-UCF" secondAttribute="trailing" constant="16" id="FgK-nY-ejc"/>
+                            <constraint firstItem="swO-ip-uW7" firstAttribute="trailing" secondItem="YMA-lg-zQI" secondAttribute="trailing" id="GI1-cj-IVX"/>
+                            <constraint firstItem="YMA-lg-zQI" firstAttribute="bottom" secondItem="5HB-kH-UCF" secondAttribute="bottom" constant="16" id="OZc-LI-Eqj"/>
+                            <constraint firstItem="u79-8V-ZV1" firstAttribute="top" secondItem="YMA-lg-zQI" secondAttribute="top" constant="8" id="UPn-Th-E7A"/>
+                            <constraint firstItem="swO-ip-uW7" firstAttribute="top" secondItem="u79-8V-ZV1" secondAttribute="bottom" constant="16" id="crG-RT-Re2"/>
+                            <constraint firstItem="YMA-lg-zQI" firstAttribute="trailing" secondItem="u79-8V-ZV1" secondAttribute="trailing" constant="20" id="g7W-hd-CHK"/>
+                            <constraint firstItem="swO-ip-uW7" firstAttribute="leading" secondItem="YMA-lg-zQI" secondAttribute="leading" id="ion-Yx-qGr"/>
+                            <constraint firstItem="5HB-kH-UCF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YMA-lg-zQI" secondAttribute="leading" symbolic="YES" id="rQy-ik-3TB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YMA-lg-zQI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wBB-Cg-cJM"/>
+                    <connections>
+                        <outlet property="addTaskButton" destination="5HB-kH-UCF" id="VGF-fF-3BY"/>
+                        <outlet property="tableView" destination="swO-ip-uW7" id="GF3-3k-YoZ"/>
+                        <outlet property="taskTypeSelector" destination="u79-8V-ZV1" id="hGq-nw-b5W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MTA-DL-odV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="871.01449275362324" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
