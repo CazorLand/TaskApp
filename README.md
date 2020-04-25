@@ -1,2 +1,2 @@
 # TaskApp
-TaskApp Persistence Class KeepCoding
+TaskApp Persistence Class using CoreData - KeepCoding -
